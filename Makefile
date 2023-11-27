@@ -12,6 +12,7 @@ build:
 
 # Internal build target (actual build process)
 build_internal:
+	@echo "inside build_internal case!"
 	# Your build commands go here
 	# For example:
 	# gcc -o my_program my_source_code.c
