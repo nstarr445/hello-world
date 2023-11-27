@@ -24,6 +24,10 @@ jobs:
         docker buildx create --use
         docker build -t rhel8 .
         docker run --rm rhel8 make build_internal
+
+    - name: Run tests on UBI8
+      run: |
+        docker run --rm rhel8 make test
         
   build_with_ubi9:
     runs-on: ubuntu-latest
