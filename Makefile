@@ -25,3 +25,6 @@ build_internal:
 	# or any other build commands specific to your project
 
 .PHONY: build build_internal
+
+make:
+	@echo "running tests"
