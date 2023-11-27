@@ -8,6 +8,7 @@ endif
 # Build target
 build:
 	docker run --rm -v $(PWD):/app -w /app $(DOCKER_IMAGE) make build_internal
+	@echo "Build completed successfully!"
 
 # Internal build target (actual build process)
 build_internal:
