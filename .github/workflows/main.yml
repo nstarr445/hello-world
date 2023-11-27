@@ -21,8 +21,6 @@ jobs:
 
     - name: Build Project with Red Hat UBI8
       run: |
-        docker buildx create --use
-        docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 ls
-        docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 dnf install -y make
-        docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 make build_internal
-
+      docker buildx create --use
+      docker build -t rhel8 .
+      docker run --rm rhel8 make build_internal
