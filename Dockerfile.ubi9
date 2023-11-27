@@ -1,0 +1,16 @@
+# Dockerfile for building the project with Red Hat UBI9
+FROM redhat/ubi9
+
+# Install make and additional development tools if needed
+RUN yum install -y make
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the contents of the local app directory to the container
+COPY . /app
+
+# Your additional Dockerfile configuration goes here
+
+# Build target
+CMD ["make", "build_internal"]
