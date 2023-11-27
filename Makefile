@@ -10,7 +10,7 @@ else
 endif
 
 
-make:
+test:
 	@echo "running tests"
 
 # Build target
