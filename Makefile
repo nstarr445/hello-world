@@ -1,5 +1,6 @@
 # Check the OS
 OS := $(shell uname)
+OS_DIST := $(shell cat /etc/redhat-release 2>/dev/null || echo "Unknown")
 
 # Check if the environment is Red Hat UBI8
 ifeq ($(shell grep -c 'Red Hat' /etc/redhat-release),1)
@@ -11,12 +12,12 @@ endif
 # Build target
 build:
 	docker run --rm -v $(PWD):/app -w /app $(DOCKER_IMAGE) make build_internal
-	@echo "Building on $(OS)..."
+	@echo "Building on $(OS_DIST)..."
 	@echo "Build completed successfully!"
 
 # Internal build target (actual build process)
 build_internal:
-	@echo "Building on $(OS)..."
+	@echo "Building on $(OS_DIST)..."
 	@echo "inside build_internal case!"
 	# Your build commands go here
 	# For example:
