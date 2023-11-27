@@ -24,7 +24,8 @@ jobs:
         docker buildx create --use
         docker build -t rhel8 .
         docker run --rm rhel8 make build_internal
- build_with_ubi9:
+        
+  build_with_ubi9:
     runs-on: ubuntu-latest
 
     steps:
