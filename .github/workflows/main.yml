@@ -21,6 +21,6 @@ jobs:
 
     - name: Build Project with Red Hat UBI8
       run: |
-      docker buildx create --use
-      docker build -t rhel8 .
-      docker run --rm rhel8 make build_internal
+        docker buildx create --use
+        docker build -t rhel8 .
+        docker run --rm rhel8 make build_internal
