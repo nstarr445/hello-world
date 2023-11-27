@@ -3,7 +3,7 @@ OS := $(shell uname)
 OS_DIST := $(shell cat /etc/redhat-release 2>/dev/null || echo "Unknown")
 
 # Check if the environment is Red Hat UBI8
-ifeq ($(shell grep -c 'Red Hat' /etc/redhat-release),1)
+ifeq ($(shell grep -c 'Red Hat Enterprise Linux release 8' /etc/redhat-release),1)
     DOCKER_IMAGE := redhat/ubi8
 else
     $(error "This Makefile requires a Red Hat UBI8 environment.")
