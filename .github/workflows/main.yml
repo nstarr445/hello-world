@@ -21,4 +21,4 @@ jobs:
 
     - name: Build Project with Red Hat UBI8
       run: |
-        hostnamectl
+        docker run hostnamectl
