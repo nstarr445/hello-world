@@ -23,4 +23,5 @@ jobs:
       run: |
         docker buildx create --use
         docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 ls
+        docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 dnf install -y make
         docker run --rm -v $GITHUB_WORKSPACE:/app -w /app redhat/ubi8 make
