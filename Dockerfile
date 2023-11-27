@@ -10,3 +10,8 @@ WORKDIR /app
 COPY . /app
 
 # Your additional Dockerfile configuration goes here
+#build targets
+CMD ["make", "build_internal"]
+
+#test targets
+CMD ["make", "test"]
