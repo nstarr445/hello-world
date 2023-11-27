@@ -9,6 +9,10 @@ else
     $(error "This Makefile requires a Red Hat UBI8 environment.")
 endif
 
+
+make:
+	@echo "running tests"
+
 # Build target
 build:
 	docker run --rm -v $(PWD):/app -w /app $(DOCKER_IMAGE) make build_internal
@@ -26,5 +30,3 @@ build_internal:
 
 .PHONY: build build_internal
 
-make:
-	@echo "running tests"
